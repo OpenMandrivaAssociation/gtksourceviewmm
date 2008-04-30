@@ -4,8 +4,8 @@
 %define develname %mklibname -d gtksourceviewmm- %{api_version}
 
 Summary:	Source code viewing library
-Name:		libgtksourceviewmm
-Version: 1.9.5
+Name:		gtksourceviewmm
+Version: 2.2.0
 Release:	%mkrel 1
 License:	GPL
 Group:		Editors
@@ -38,7 +38,7 @@ This package contains the C++ language bindings for GtkSourceview.
 Summary:        Libraries and include files for GtkSourceView
 Group:          Development/C++
 Requires: %lib_name = %version
-Provides:	%{name}-devel = %{version}-%{release}
+Provides:	libgtksourceviewmm-devel = %{version}-%{release}
 Provides:	libgtksourceviewmm-%{api_version}-devel = %{version}-%{release}
 Obsoletes: %mklibname -d gtksourceviewmm- 1.0 2
 
@@ -60,7 +60,6 @@ This package contains the C++ language bindings for GtkSourceview.
 rm -rf %{buildroot} installed-docs
 
 %makeinstall_std
-%{find_lang} %{name}-%{api_version}
 mv %buildroot%_datadir/doc/*/docs/reference/ installed-docs
 
 %post -n %{lib_name} -p /sbin/ldconfig

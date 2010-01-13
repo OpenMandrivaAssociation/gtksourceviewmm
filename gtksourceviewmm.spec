@@ -5,15 +5,15 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
-Version: 2.3.1
-Release:	%mkrel 2
-License:	GPL
+Version: 2.9.0
+Release:	%mkrel 1
+License:	LGPLv2+
 Group:		Editors
 URL:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}
-BuildRequires:	libgtksourceview-devel
-BuildRequires:	gtkmm2.4-devel
+BuildRequires:	libgtksourceview-devel >= 2.9.4
+BuildRequires:	gtkmm2.4-devel >= 2.12
 BuildRequires:	doxygen
 
 %description
@@ -57,10 +57,9 @@ This package contains the C++ language bindings for GtkSourceview.
 %make
 
 %install
-rm -rf %{buildroot} installed-docs
+rm -rf %{buildroot}
 
 %makeinstall_std
-mv %buildroot%_datadir/doc/*/docs/reference/ installed-docs
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
@@ -82,7 +81,8 @@ rm -rf %{buildroot}
 
 %files -n %develname
 %defattr(-,root,root)
-%doc installed-docs/*
+%doc %_datadir/doc/gtksourceviewmm-%{api_version}/
+%_datadir/devhelp/books/gtksourceviewmm-%{api_version}
 %{_libdir}/*.so
 %attr(644,root,root) %{_libdir}/*.la
 %{_includedir}/*

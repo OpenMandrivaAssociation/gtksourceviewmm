@@ -5,12 +5,12 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
-Version: 2.10.1
+Version: 2.10.2
 Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Editors
 URL:		http://www.gnome.org/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 BuildRequires:	libgtksourceview-devel >= 2.9.4
 BuildRequires:	gtkmm2.4-devel >= 2.12

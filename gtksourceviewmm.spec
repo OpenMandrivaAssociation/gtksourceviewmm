@@ -6,7 +6,7 @@
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
 Version: 2.10.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	LGPLv2+
 Group:		Editors
 URL:		http://www.gnome.org/

@@ -8,7 +8,7 @@
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
 Version:	3.2.0
-Release:	2
+Release:	3
 License:	LGPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/

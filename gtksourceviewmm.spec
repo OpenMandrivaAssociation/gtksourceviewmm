@@ -15,6 +15,7 @@ Url:		http://www.gnome.org/
 Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(gtkmm-3.0)
+BuildRequires:	pkgconfig(glibmm-2.4)
 BuildRequires:	pkgconfig(gtksourceview-4)
 
 %description

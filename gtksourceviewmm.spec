@@ -7,7 +7,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
-Version:	3.91.1
+Version:	3.21.3
 Release:	1
 License:	LGPLv2+
 Group:		Editors
@@ -16,7 +16,7 @@ Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}
 BuildRequires:	doxygen
 BuildRequires:	pkgconfig(gtkmm-3.0)
 BuildRequires:	pkgconfig(glibmm-2.4)
-BuildRequires:	pkgconfig(gtksourceview-4)
+BuildRequires:	pkgconfig(gtksourceview-3.0)
 
 %description
 GtkSourceview is a library that adds syntax highlighting,

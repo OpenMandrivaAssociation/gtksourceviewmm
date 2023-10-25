@@ -1,21 +1,27 @@
 %define url_ver %(echo %{version} | cut -d "." -f -2)
 
-%define api 3.0
-%define major 0
-%define libname %mklibname gtksourceviewmm %{api} %{major}
-%define devname %mklibname gtksourceviewmm %{api} -d
+%global api 3.0
+%global major 0
+%global libname %mklibname %{name} %{api}
+%global devname %mklibname %{name} %{api} -d
+
+%global glibmm_version 2.46.1
+%global gtkmm_version 3.18.0
+%global gtksourceview_version 3.18.0
 
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
-Version:	3.2.0
-Release:	3
+Version:	3.21.2
+Release:	1
 License:	LGPLv2+
 Group:		Editors
 Url:		http://www.gnome.org/
 Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
-BuildRequires:	pkgconfig(gtkmm-3.0)
-BuildRequires:	pkgconfig(gtksourceview-3.0)
+BuildRequires:	graphviz
+BuildRequires:	pkgconfig(glibmm-2.4) >= %{glibmm_version}
+BuildRequires:	pkgconfig(gtkmm-3.0)  >= %{gtkmm_version}
+BuildRequires:	pkgconfig(gtksourceview-3.0) >= %{gtksourceview_version}
 
 %description
 GtkSourceview is a library that adds syntax highlighting,
@@ -64,11 +70,21 @@ This package contains the C++ language bindings for GtkSourceview.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x
-%make
+%set_build_flags
+./configure \
+	--disable-static \
+	--disable-silent-rules \
+	--disable-dependency-tracking \
+	--disable-rpath \
+	--program-prefix= \
+	--prefix=/usr \
+	--libdir=/usr/lib64 \
+	%{nil}
+%make_build
 
 %install
-%makeinstall_std
+%make_install
+

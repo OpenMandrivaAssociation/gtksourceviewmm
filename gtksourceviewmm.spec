@@ -11,7 +11,7 @@
 
 Summary:	Source code viewing library
 Name:		gtksourceviewmm
-Version:	3.21.2
+Version:	3.18.0
 Release:	1
 License:	LGPLv2+
 Group:		Editors

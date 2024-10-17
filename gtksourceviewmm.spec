@@ -15,7 +15,7 @@ Version:	3.18.0
 Release:	1
 License:	LGPLv2+
 Group:		Editors
-Url:		http://www.gnome.org/
+Url:		https://www.gnome.org/
 Source0:	http://download.gnome.org/sources/%{name}/%{url_ver}/%{name}-%{version}.tar.xz
 BuildRequires:	doxygen
 BuildRequires:	graphviz
